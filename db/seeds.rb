@@ -7,5 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-actor = Actor.new({first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock"})
-actor.save
+# actor = Actor.new({first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock"})
+# actor.save
+
+10.times do
+  Actor.create({
+    first_name: FFaker::Name.first_name,
+    last_name: FFaker::Name.last_name,
+    known_for: FFaker::Movie.title
+  }
+  )
+end
